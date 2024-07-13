@@ -1,0 +1,425 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(213, 23, 23);
+    display: flex;
+    padding: 2px;
+}
+
+.side-bar {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+.sideBarTop {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dash-page {
+    width: 80%;
+    height: 100%;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.sideBar-logo {
+    width: 100%;
+    height: 3rem;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.exitBtn {
+    height: auto;
+    width: auto;
+    transform: scaleX(-1);
+}
+
+.searchBox {
+    padding: 10px;
+    height: 2rem;
+    border: 1px solid whitesmoke;
+    border-radius: 15px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#search {
+    background-color: transparent;
+    border: none;
+    width: 14rem;
+    color: whitesmoke;
+    all: unset;
+}
+
+.sideBar-menu1 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid whitesmoke;
+    padding-bottom: 10px;
+}
+
+.dashBoard {
+    width: 100%;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.orders {
+    width: 100%;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.vendors {
+    width: 100%;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.payments {
+    width: 100%;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.customers {
+    width: 100%;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.sideBar-menu2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* border-bottom: 1px solid whitesmoke; */
+    padding-bottom: 10px;
+}
+
+.help {
+    width: 100%;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.notifications {
+    width: 100%;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.settings {
+    width: 100%;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.circle {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: whitesmoke;
+}
+
+.userProfile {
+    width: 100%;
+    height: 3rem;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.userBox {
+    /* border: 1px solid white; */
+    display: flex;
+    gap: 10px;
+}
+
+.sub-menu {
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ordersPage {
+    width: 70%;
+    height: 100%;
+    border-right: 1px solid grey;
+}
+
+.ordersHeader {
+    width: 100%;
+    height: 20%;
+}
+
+.ordersBody {
+    width: 100%;
+    height: 80%;
+    border-top: 1px solid grey;
+    padding: 20px;
+}
+.headerTop {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.headerBottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid grey;
+}
+
+.selected {
+    height: 3rem;
+    width: 30rem;
+    background-color: transparent;
+    display: flex;
+    gap: 5px;
+    color: whitesmoke;
+    position: relative;
+    top: 520px;
+    left: 220px;
+    z-index: 1;
+}
+
+.closeSelected {
+    width: 3rem;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.selectedDetails {
+    width: 30rem;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#import {
+    border: none;
+    background-color: black;
+    color: white;
+    width: 5.5rem;
+    height: 1.8rem;
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+#export {
+    border: none;
+    background-color: rgb(115, 115, 115);
+    color: black;
+    width: 5.5rem;
+    border-radius: 5px;
+    height: 1.8rem;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.impex {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    width: 22%;
+}
+
+a {
+    all: unset;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+    width: 60%;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.vendorsHeader {
+    height: 10%;
+    width: 90%;
+    border-bottom: 1px solid grey;
+    margin: auto;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#addVendor {
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(213, 23, 23);
+    color: whitesmoke;
+}
+
+.searchInventory {
+    width: 90%;
+    margin: auto;
+    padding: 15px;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid black; */
+    margin-top: 5px;
+}
+
+.searchInventoryBox {
+    width: 15rem;
+    height: 2rem;
+    border: 1px solid grey;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#searchInventory {
+    width: 80%;
+    all: unset;
+}
+
+.searchFilters {
+    display: flex;
+    width: 30%;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+}
+
+#filters {
+    background-color: transparent;
+    border: 1px solid black;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+#vendorTable {
+    width: 90%;
+    margin: auto;
+}
+
+.vendorsBody {
+    height: 72%;
+    /* border: 1px solid black; */
+}
+
+.pagination {
+    height: 10%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 0.75rem;
+}
+
+.pages {
+    display: flex;
+    gap: 10px;
+}
+
+.filterNumber {
+    display: flex;
+    gap: 10px;
+}
+
+#filterNumber {
+    width: 3rem;
+}
+
+#next {
+    font-weight: bold;
+}
