@@ -1,9 +1,6 @@
 const form = document.getElementById("loginForm");
-const check = localStorage.getItem("entries");
-
-const validate = JSON.parse(check)
-console.log(validate)
-
+const check = JSON.parse(localStorage.getItem("entries")) || [];
+// console.log(check)
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -12,11 +9,15 @@ form.addEventListener("submit", (e) => {
         password: form.password.value,
     }
 
-    if (loginData.userId == validate.userId && loginData.password == validate.password) {
-        alert("Successful")
-        location.href = "../../dashboard.html"
-    } else {
-        alert("Wrong userid or password")
-    }
+    const user = check.find(user => user.userId === form.userId.value && user.password === form.password.value);
+
+            if (user) {
+                alert("Login successful!");
+                location.href = "../../dashboard.html"
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+            loginForm.reset(); 
+
     sessionStorage.setItem("logins", JSON.stringify(loginData));
 })
