@@ -6,9 +6,19 @@
   <title>Admin Dashboard v1.0</title>
   <link rel="stylesheet" href="assets/styles/main.css">
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles/dashboard.css">
   <!-- <script src="https://kit.fontawesome.com/94a18acc5f.js" crossorigin="anonymous"></script> -->
+  <script>
+
+    // Check if the user is in session storage
+    if (!sessionStorage.getItem('logins')) {
+       alert("Log in with valid credentials please!")
+       window.location.href = 'index.html';
+   }
+
+</script>
 </head>
-<body>
+<body onload="pageLoad()">
   <div class="container">
     <div class="side-bar">
       <div class="sideBarTop">
@@ -16,7 +26,7 @@
           <div class="logo-image">
             <h3>LOGO</h3>
           </div>
-          <div class="exitBtn">
+          <div class="exitBtn" id="logout">
             <span>
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </span>
@@ -90,13 +100,190 @@
       <div class="userProfile">
         <div class="userBox">
           <div class="circle"></div>
-        <div class="user">Ugochukwu Okonkwo</div>
+        <div class="user" id="profileName"></div>
         </div>
         <div class="sub-menu">...</div>
       </div>
     </div>
     <div class="dash-page">
-        <div class="dashHeader"></div>
+        <div class="dashHeader">
+            <div class="dashSearch">
+                <div class="overview">
+                    <h1>Overview</h1>
+                    <div class="notificationCount">8</div>
+                </div>
+                <div class="dashSearchBox">
+                    <input type="text" name="dash-search" id="dash-search">
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="dashControls">
+                <div class="newDeal">
+                    <button type="button" id="new">+ New deal</button>
+                </div>
+                <div class="controlActions">
+                    <button type="button" id="sort">Sort</button>
+                    <button type="button" id="filter">Filters</button>
+                    <button type="button" id="report">
+                        <span>
+
+                        </span>
+                        Download report
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="dashBody">
+            <div class="pending">
+                <div class="columnHeader">
+                    <span>
+                        <i class="fa-solid fa-arrows-spin"></i>
+                    </span>
+                    <p>Pending</p>
+                    <p>$0.00</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined" onclick="myFunction()">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="columnHeader">
+                    <span>
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </span>
+                    <p>Progress</p>
+                    <p>$0.00</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+            </div>
+            <div class="successful">
+                <div class="columnHeader">
+                    <span>
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                    <p>Successful</p>
+                    <p>$0.00</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <div class="popup" onclick="myFunction()"><b>UserID:</b> <a style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a>
+                        <span class="popuptext" id="myPopup">
+                            <div class="profile-image">
+                                <span>
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+                            </div>
+                            <p>Name: Mike Bernard</p>
+                            <p>Age: 36</p>
+                            <p>sex: Male</p>
+                        </span>
+                    </div>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                </div>
+            </div>
+            <div class="declined">
+                <div class="columnHeader">
+                    <span>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </span>
+                    <p>Declined</p>
+                    <p>$0.00</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                    <p><b>Reason:</b> Failed POS transaction.</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                    <p><b>Reason:</b> Failed POS transaction.</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                    <p><b>Reason:</b> Out of Stock.</p>
+                </div>
+                <div class="cards">
+                    <p><b>User:</b> Ejike Abdul Oyelowo</p>
+                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <p><b>Order Description:</b> 1 plate rice and chicken</p>
+                    <p><b>Vendor:</b> Mummy's Kitchen</p>
+                    <p><b>Reason:</b> Cancelled by user.</p>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
 

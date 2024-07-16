@@ -1,23 +1,31 @@
 const form = document.getElementById("loginForm");
 const check = JSON.parse(localStorage.getItem("entries")) || [];
-// console.log(check)
+console.log(check)
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let loginData = {
-        userId: form.userId.value,
-        password: form.password.value,
+    const userId = form.userId.value;
+    const password = form.password.value;
+    const userName = form.userName.value;
+
+    const user = check.find(users => users.userName === userName && users.userId === userId && users.password === password);
+
+    if (user) {
+        // Store the signed-in user info in session storage
+        sessionStorage.setItem('signedInUser', JSON.stringify(user));
+
+        // Populate the dashboard with the user's name
+        document.getElementById("profileName").innerHTML = user.userName;
+
+        alert("Login successful!");
+        form.reset();
+    } else {
+        alert("Invalid login credentials!");
     }
 
-    const user = check.find(user => user.userId === form.userId.value && user.password === form.password.value);
+    })
 
-            if (user) {
-                alert("Login successful!");
-                location.href = "../../dashboard.html"
-            } else {
-                alert("Invalid credentials. Please try again.");
-            }
-            loginForm.reset(); 
-
-    sessionStorage.setItem("logins", JSON.stringify(loginData));
-})
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }

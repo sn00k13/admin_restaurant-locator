@@ -47,6 +47,12 @@ body {
     font-size: 1rem;
 }
 
+.userNameBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .userIdBox {
     display: flex;
     flex-direction: column;
@@ -57,6 +63,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+#userName {
+    height: 2.5rem;
+    font-size: 1.8rem;
+    padding-left: 5px;
 }
 
 #userId {
