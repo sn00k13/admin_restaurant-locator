@@ -15,10 +15,11 @@ form.addEventListener("submit", (e) => {
         sessionStorage.setItem('signedInUser', JSON.stringify(user));
 
         // Populate the dashboard with the user's name
-        document.getElementById("profileName").innerHTML = user.userName;
+        // document.getElementById("profileName").innerHTML = user.userName;
 
         alert("Login successful!");
         form.reset();
+        location.href = 'dashboard.html'
     } else {
         alert("Invalid login credentials!");
     }

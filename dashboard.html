@@ -11,7 +11,7 @@
   <script>
 
     // Check if the user is in session storage
-    if (!sessionStorage.getItem('logins')) {
+    if (!sessionStorage.getItem('signedInUser')) {
        alert("Log in with valid credentials please!")
        window.location.href = 'index.html';
    }
@@ -256,7 +256,18 @@
                 </div>
                 <div class="cards">
                     <p><b>User:</b> Ejike Abdul Oyelowo</p>
-                    <p><b>UserID:</b> <a href="" style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a></p>
+                    <div class="popup" onclick="myFunction()"><b>UserID:</b> <a style="text-decoration: underline; color: rgb(80, 80, 249);" id="a-declined">600321</a>
+                        <span class="popuptext" id="myPopup">
+                            <div class="profile-image">
+                                <span>
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+                            </div>
+                            <p>Name: Mike Bernard</p>
+                            <p>Age: 36</p>
+                            <p>sex: Male</p>
+                        </span>
+                    </div>
                     <p><b>Order Description:</b> 1 plate rice and chicken</p>
                     <p><b>Vendor:</b> Mummy's Kitchen</p>
                     <p><b>Reason:</b> Failed POS transaction.</p>
