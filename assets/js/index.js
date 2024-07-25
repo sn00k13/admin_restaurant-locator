@@ -1,6 +1,6 @@
 const form = document.getElementById("loginForm");
 const check = JSON.parse(localStorage.getItem("entries")) || [];
-console.log(check)
+const profileUser = JSON.parse(sessionStorage.getItem('signedInUser'))
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -14,8 +14,6 @@ form.addEventListener("submit", (e) => {
         // Store the signed-in user info in session storage
         sessionStorage.setItem('signedInUser', JSON.stringify(user));
 
-        // Populate the dashboard with the user's name
-        // document.getElementById("profileName").innerHTML = user.userName;
 
         alert("Login successful!");
         form.reset();
@@ -26,7 +24,9 @@ form.addEventListener("submit", (e) => {
 
     })
 
-    function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
+    function pageLoad() {
+        const profile = document.querySelector('.user');
+
+        profile.innerHTML = profileUser.userName
+        
       }
